@@ -1,6 +1,6 @@
 # Line Chart
 
-Bare React Native line chart
+Bare React Native minimalistic line chart
 
 ### Example of components with default properties
 
