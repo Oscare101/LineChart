@@ -3,32 +3,34 @@ import {StyleSheet, View} from 'react-native';
 import LineChart from './LineChart/LineChart';
 
 export default function App() {
+  const items = [
+    {value: 3},
+    {value: 2.2},
+    {value: 2.2},
+    {value: 2.5},
+    {value: 2.1},
+    {value: 2.2},
+    {value: 2.9},
+    {value: 2.2},
+    {value: 2.5},
+    {value: 3},
+    {value: 2.7},
+    {value: 2.9},
+  ];
+
   return (
     <View style={styles.container}>
       <LineChart
-        items={[
-          {value: 3},
-          {value: 2.2},
-          {value: 2.2},
-          {value: 2.5},
-          {value: 2.1},
-          {value: 2.2},
-          {value: 2.9},
-          {value: 2.2},
-          {value: 2.5},
-          {value: 3},
-          {value: 2.7},
-          {value: 2.9},
-        ]}
-        dotSize={5} // OK
-        lineWidth={2} // OK
-        columnHeight={50} // OK
         containerStyles={{
-          backgroundColor: '#FF0000',
-          borderRadius: 2,
-        }} // OK
-        dotColor="#0f0" // OK
-        lineColor="#00f" // OK
+          backgroundColor: '#000',
+          borderRadius: 5,
+        }}
+        items={items}
+        dotSize={2}
+        dotColor="#a5cae8"
+        lineColor="#a5cae8"
+        lineWidth={2}
+        columnHeight={50}
       />
     </View>
   );

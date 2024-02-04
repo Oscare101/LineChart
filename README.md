@@ -1,79 +1,61 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Line Chart
 
-# Getting Started
+Bare React Native line chart
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+### Example of components with default properties
 
-## Step 1: Start the Metro Server
+![example](./screenshots/example1.jpg)
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+```tsx
+import LineChart from './LineChart/LineChart';
 
-To start Metro, run the following command from the _root_ of your React Native project:
+const items = [
+  {value: 3},
+  {value: 2.2},
+  {value: 2.2},
+  {value: 2.5},
+  {value: 2.1},
+  {value: 2.2},
+  {value: 2.9},
+  {value: 2.2},
+  {value: 2.5},
+  {value: 3},
+  {value: 2.7},
+  {value: 2.9},
+];
 
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+<LineChart items={items} />;
 ```
 
-## Step 2: Start your Application
+### Usage
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+Requires no additional libraries
 
-### For Android
+### Properties
 
-```bash
-# using npm
-npm run android
+| Property        | Type     | Description                                                                                                          |
+| --------------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
+| items           | Object[] | Items that will render. Use [{value: number}...] type                                                                |
+| dotColor        | string   | Color of chart's dots                                                                                                |
+| lineColor       | string   | Color of chart's lines                                                                                               |
+| dotSize         | number   | Size of chart's dots                                                                                                 |
+| lineWidth       | number   | Width of chart's lines                                                                                               |
+| columnHeight    | number   | Height of chart's columns                                                                                            |
+| columnWidth     | number   | Width of chart's columns (use only if chart width is static and calculate it as = container width / number of items) |
+| containerStyles | Object   | Styles that will be propagated to the container                                                                      |
 
-# OR using Yarn
-yarn android
+### Example of using all styles properties
+
+![example](./screenshots/example2.jpg)
+
+```tsx
+<LineChart
+  containerStyles={{backgroundColor: '#000', borderRadius: 5}}
+  items={items}
+  dotSize={2}
+  dotColor="#a5cae8"
+  lineColor="#a5cae8"
+  lineWidth={2}
+  columnHeight={50}
+/>
 ```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
