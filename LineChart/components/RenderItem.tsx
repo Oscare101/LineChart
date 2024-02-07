@@ -1,4 +1,4 @@
-import {View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import {
   GetAngle,
   GetDotPosition,
@@ -42,14 +42,16 @@ export function RenderItem(props: any) {
             },
           ],
         }}>
-        <View
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={props.onDotPress}
           style={{
             width: props.dotSize,
             height: props.dotSize,
             borderRadius: props.dotSize,
             backgroundColor: props.dotColor || colors.dot,
             zIndex: 2,
-          }}></View>
+          }}></TouchableOpacity>
         {props.items[props.index + 1] ? (
           <View
             style={{

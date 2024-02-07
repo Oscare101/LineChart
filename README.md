@@ -33,16 +33,17 @@ Requires no additional libraries
 
 ### Properties
 
-| Property        | Type     | Required | Description                                                                                                          |
-| --------------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
-| items           | Object[] | Yes      | Items that will render. Use [{value: number}...] type                                                                |
-| dotColor        | string   | No       | Color of chart's dots                                                                                                |
-| lineColor       | string   | No       | Color of chart's lines                                                                                               |
-| dotSize         | number   | No       | Size of chart's dots                                                                                                 |
-| lineWidth       | number   | No       | Width of chart's lines                                                                                               |
-| columnHeight    | number   | No       | Height of chart's columns                                                                                            |
-| columnWidth     | number   | No       | Width of chart's columns (use only if chart width is static and calculate it as = container width / number of items) |
-| containerStyles | Object   | No       | Styles that will be propagated to the container                                                                      |
+| Property        | Type                | Required | Description                                                                                                          |
+| --------------- | ------------------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
+| items           | Object[]            | Yes      | Items that will render. Use [{value: number}...] type                                                                |
+| dotColor        | string              | No       | Color of chart's dots                                                                                                |
+| lineColor       | string              | No       | Color of chart's lines                                                                                               |
+| dotSize         | number              | No       | Size of chart's dots                                                                                                 |
+| lineWidth       | number              | No       | Width of chart's lines                                                                                               |
+| columnHeight    | number              | No       | Height of chart's columns                                                                                            |
+| columnWidth     | number              | No       | Width of chart's columns (use only if chart width is static and calculate it as = container width / number of items) |
+| containerStyles | Object              | No       | Styles that will be propagated to the container                                                                      |
+| onDotPress      | function => (value) | No       | Function after dot press. Returns value                                                                              |
 
 ### Example of using all styles properties
 
@@ -57,5 +58,6 @@ Requires no additional libraries
   lineColor="#a5cae8"
   lineWidth={2}
   columnHeight={50}
+  onDotPress={(value: number) => console.log(value)}
 />
 ```

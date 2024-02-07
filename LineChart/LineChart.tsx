@@ -37,6 +37,9 @@ export default function LineChart(props: LineChartProps) {
             items={props.items}
             lineColor={props.lineColor}
             dotColor={props.dotColor}
+            onDotPress={() => {
+              props.onDotPress(item.value);
+            }}
           />
         )}
         initialNumToRender={props.items.length}

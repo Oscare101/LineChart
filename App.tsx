@@ -26,11 +26,12 @@ export default function App() {
           borderRadius: 5,
         }}
         items={items}
-        dotSize={3}
+        dotSize={5}
         dotColor="#a5cae8"
         lineColor="#a5cae840"
         lineWidth={2}
         columnHeight={50}
+        onDotPress={(value: number) => console.log(value)}
       />
     </View>
   );

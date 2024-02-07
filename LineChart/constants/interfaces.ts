@@ -7,4 +7,5 @@ export default interface LineChartProps {
   columnHeight?: number;
   columnWidth?: number;
   containerStyles?: any;
+  onDotPress?: any;
 }
